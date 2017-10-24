@@ -2,6 +2,7 @@ var VideoListView = Backbone.View.extend({
 
   initialize: function() {
     console.log('VideoListView Initialized');
+    this.collection.on('sync', this.render, this);
   },
 
   render: function() {
@@ -11,8 +12,8 @@ var VideoListView = Backbone.View.extend({
   },
 
   renderMovie: function(movie) {
-    console.log('VIDEOLIST RENDERMOVIE CALLED');
-    console.log('MOVIE PASSED IN = ', movie);
+    // console.log('VIDEOLIST RENDERMOVIE CALLED');
+    // console.log('MOVIE PASSED IN = ', movie);
     var videoListEntry = new VideoListEntryView({model: movie});
     this.$el.append(videoListEntry.render());
   }
