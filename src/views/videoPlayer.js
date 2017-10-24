@@ -7,6 +7,7 @@ initialize: function() {
 
 
   render: function() {
+    console.log('VIDEOPLAYER!!! = ', this);
     this.$el.html(this.template());
     return this;
   },
