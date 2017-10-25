@@ -6,8 +6,18 @@ var Video = Backbone.Model.extend({
   },
 
   select: function() {
-    //console.log('SELECT RAN');
     this.trigger('select', this);
+  },
+
+  events: {
+    'click .video-list-entry-title': 'handleClick'
+  },
+
+  handleClick: function() {
+    this.model.select();
   }
 
 });
+
+
+

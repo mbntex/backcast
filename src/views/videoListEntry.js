@@ -7,8 +7,8 @@ var VideoListEntryView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     //console.log('MODEL ATTRIBUTES = ', this.model.attributes.snippet);
-    // console.log('MODEL TITLE = ', this.model.attributes.snippet.title);
-    // console.log('MODEL DESCRIPTION = ', this.model.attributes.snippet.description);
+    //console.log('MODEL TITLE = ', this.model.attributes.snippet.title);
+    //console.log('MODEL DESCRIPTION = ', this.model.attributes.snippet.description);
     return this.$el;
   },
 
@@ -17,10 +17,8 @@ var VideoListEntryView = Backbone.View.extend({
   },
 
   handleClick: function() {
-    // console.log('rock on handleClick Ran!');
     this.model.select();
   },
-
 
   template: templateURL('src/templates/videoListEntry.html')
 

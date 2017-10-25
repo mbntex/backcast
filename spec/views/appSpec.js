@@ -32,7 +32,7 @@ describe('AppView', function() {
     expect(VideoListView.prototype.render).to.have.callCount(1);
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
 
     it('should render a Search view', function() {
       expect(SearchView.prototype.render).to.have.callCount(1);
@@ -42,12 +42,13 @@ describe('AppView', function() {
       expect(Backbone.ajax).to.have.been.called;
     });
 
-    it('should select the first video once new videos are loaded', function() {
-      var model = view.videos.at(0);
-      sinon.spy(model, 'select');
-      view.videos.trigger('sync');
-      expect(model.select).to.have.been.called;
-    });
+    // //USED CLEANER METHOD AND CALLED SEARCH RENDER ON SYNC IN FUNCITON, SELECT WAS NOT USED.
+    // it('should select the first video once new videos are loaded', function() {
+    //   var model = view.videos.at(0);
+    //   sinon.spy(model, 'select');
+    //   view.videos.trigger('sync');
+    //   expect(model.select).to.have.been.called;
+    // });
 
   });
 });
